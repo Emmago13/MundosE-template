@@ -45,19 +45,19 @@ img {
   transition: all 0.5s ease 0s;
 }
 
-.header.header--fixed {
-  top: 0;
+.header.onScroll {
   position: fixed;
+  top: 0;
   background-color: #E0752F;
   z-index: 1000;
 }
 
-.header.header--fixed .navbar > ul > li > a {
-  padding-top: 15px;
-  padding-bottom: 15px;
+.header.onScroll ul {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
-.header.header--fixed a:hover {
+.header.onScroll a:hover {
   color: #343434;
 }
 

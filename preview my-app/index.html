@@ -10,7 +10,7 @@
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <header class="header">
+    <header id="header" class="header">
         <div>
             <a href="#home">
                 <img src="./assets/Img/top-logo.svg" alt="Logo25Watts">
@@ -149,19 +149,14 @@
         <p>2021 © All rights reserved.</p>
         <a href="#home"><img src="./assets/Img/footer-logo.svg" alt="Logo25Watts"></a>
     </footer>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function () {
-            var headerh = $('.header').outerHeight();
-            
-            $(window).scroll(function () {
-                if ($(document).scrollTop() >= headerh) {
-                    $('.header').addClass('header--scroll');
-                } else {
-                    $('.header').removeClass('header--scroll');
-                }
-            });
+        const header = document.getElementById('header')
+        window.addEventListener('scroll',()=>{
+            if (window.scrollY >= 100) {
+                header.classList.add('onScroll');
+            }else{
+                header.classList.remove('onScroll');
+            }
         });
     </script>
 </body>

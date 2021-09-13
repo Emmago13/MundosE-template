@@ -3,11 +3,15 @@
     width: 100%;
     border-bottom: 1px solid $color-secondary;
     transition: all 0.5s ease 0s;
-    &.header--scroll{
+    &.onScroll{
         position: fixed;
         top: 0;
         background-color: $color-secondary;
         z-index: 1000;
+        ul{
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
         a:hover{
             color: $color-quinary;
         }
