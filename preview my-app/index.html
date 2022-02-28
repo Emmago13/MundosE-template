@@ -17,13 +17,17 @@
             </a>
             <nav >
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home" id="nav-link">Home</a></li>
+                    <li><a href="#about" id="nav-link">About</a></li>
+                    <li><a href="#products" id="nav-link">Products</a></li>
+                    <li><a href="#services" id="nav-link">Services</a></li>
+                    <li><a href="#contact" id="nav-link">Contact</a></li>
                 </ul>
-            </nav>      
+            </nav>    
+            <div class="menu__icon">
+                <span></span>
+                <span></span>
+            </div>    
         </div>
     </header>
     <main>
@@ -150,7 +154,24 @@
         <a href="#home"><img src="./assets/Img/footer-logo.svg" alt="Logo25Watts"></a>
     </footer>
     <script>
-        const header = document.getElementById('header')
+        const header = document.getElementById('header');
+        const menuIcon = document.querySelector('.menu__icon');
+        const navLink = document.querySelectorAll('#nav-link');
+        
+        navLink.forEach(button => {
+            button.addEventListener('click', () => handlerHeaderClasslist());
+        })
+
+        menuIcon.addEventListener('click',() => handlerHeaderClasslist());
+
+        const handlerHeaderClasslist = () => {
+            if (header.classList.contains('active')) {
+                header.classList.remove('active');
+            }else{
+                header.classList.add('active');
+            }
+        }
+
         window.addEventListener('scroll',()=>{
             if (window.scrollY >= 100) {
                 header.classList.add('onScroll');
